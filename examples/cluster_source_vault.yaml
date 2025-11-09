@@ -1,0 +1,8 @@
+---
+apiVersion: hive.io/v1alpha1
+kind: ClusterSource
+metadata:
+  name: gke-clusters-source
+spec:
+  type: vault
+  # TBD

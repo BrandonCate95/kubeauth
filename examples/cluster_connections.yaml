@@ -1,0 +1,14 @@
+---
+apiVersion: hive.io/v1alpha1
+kind: ClusterConnection
+metadata:
+  name: gke-cluster
+  annotations:
+    status: healthy # (maintainence, not healthy) --- intresting idea to attach metainfo to cluster
+spec:
+  provider: aws # (azure, gcp)
+  region: us-east1
+  clusterRef:
+    name: gke-cluster
+  ### OPTIONAL ###
+  authCommand: gcloud get-credentials # for overriding default authentication command

@@ -1,0 +1,12 @@
+---
+apiVersion: hive.io/v1alpha1
+kind: ClusterSource
+metadata:
+  name: gke-clusters-source
+spec:
+  # assumes access to file/dir
+  type: local # (git, local, sql)
+  path: ~/clusters # local file or dir
+  ### OPTIONAL ###
+  recursive: false # default (false) can be true
+  pattern: "*" # regex pattern to match on file name

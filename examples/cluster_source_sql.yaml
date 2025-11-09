@@ -1,0 +1,17 @@
+---
+apiVersion: hive.io/v1alpha1
+kind: ClusterSource
+metadata:
+  name: gke-clusters-source
+spec:
+  # requires username/password env vars
+  type: sql # (git, local, sql)
+  driver: postgres # standard ones
+  host: my.postgres.host.com # or IP
+  database: db-name
+  ### OPTIONAL ###
+  parameters: sslmode=require # Optional - passed as connection string query params
+  env:
+    usernameKey: PSQL_USER # Optional - can be overwritten to use diff env vars
+    passwordKey: PSQL_PASSWORD # Optional - can be overwritten to use diff env vars
+  query: SELECT * FROM CLUSTER_TABLE # Optional - to overwrite query
