@@ -1,6 +1,6 @@
 # kubeauth
 
-Maintain a distrubuted list of clusters and how to authenticate to them.≈≈
+Maintain a distrubuted list of clusters and how to authenticate to them.
 
 ---
 
@@ -86,8 +86,7 @@ kind: ClusterSource
 metadata:
   name: gke-clusters-source
 spec:
-  # assumes access to repo using git
-  type: git # (git, local, sql)
+  type: git
   repo: https://github.com/<ORG>/<NAME> # or ssh
 ```
 
@@ -138,7 +137,7 @@ TODO
 
 ## Convert KubeConfig
 
-If you are starting from scratch the below command will output a set of `ClusterConnection`s based on your local kubeconfig.
+If you are starting with an existing set of clusters the below command will output a set of `ClusterConnection`s based on your local kubeconfig.
 
 ```sh
 kubeauth convert kubeconfig --path ~/kube/.config --output ./cluster_connections.yaml
